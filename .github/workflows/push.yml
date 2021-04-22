@@ -32,8 +32,8 @@ jobs:
       - name: Combine experiment CR
         run: |
           export PATH=$PATH:$(go env GOPATH)/bin
-          cd ${GOPATH}/src/github.com/${{github.repository}}
-          make combineExpCR
+          cd ${GOPATH}/src/github.com/${{github.repository}}/scripts
+          go run combine-all-crs.go 
 
       # Commit and push the changes from the chart directory 
       - name: Commit and Push the changes
