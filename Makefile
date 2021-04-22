@@ -13,7 +13,7 @@ pip_deps:
 godeps:
 	@echo ""
 	@go get -u -v golang.org/x/lint/golint
-	@go get -u -v golang.org/x/tools/scripts/goimports
+	@go get -u -v golang.org/x/tools/cmd/goimports
 
 .PHONY: versionmaker
 versionmaker:
