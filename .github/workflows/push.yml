@@ -9,13 +9,13 @@ on: [ push ]
 jobs:
   push:
     runs-on: ubuntu-latest
-    if: github.repository == 'litmuschaos/chaos-charts'
+    if: github.repository == 'uditgaurav/test-chaos-charts'
     steps:
 
       # Install golang
       - uses: actions/setup-go@v2
         with:
-          go-version: '^1.13.1'
+          go-version: '1.14'
 
       # Setup gopath
       - name: Setting up GOPATH 
@@ -34,7 +34,7 @@ jobs:
         run: |
           export PATH=$PATH:$(go env GOPATH)/bin
           cd ${GOPATH}/src/github.com/${{github.repository}}
-          make combineExpCR
+          CGO_ENABLED=0 go build -o /combine-experiment-cr -v ./scripts
         shell: bash
 
       # Commit and push the changes from the chart directory 
