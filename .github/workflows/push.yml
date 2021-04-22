@@ -33,7 +33,7 @@ jobs:
         run: |
           export PATH=$PATH:$(go env GOPATH)/bin
           cd ${GOPATH}/src/github.com/${{github.repository}}
-          CGO_ENABLED=0 go run scripts/combine-all-crs.go -v ./scripts
+          CGO_ENABLED=0 go build scripts/combine-all-crs.go -v ./scripts
 
       # Commit and push the changes from the chart directory 
       - name: Commit and Push the changes
