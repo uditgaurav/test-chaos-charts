@@ -32,14 +32,12 @@ jobs:
       - name: Combine experiment CR
         run: |
           export PATH=$PATH:$(go env GOPATH)/bin
-          cd ${GOPATH}/src/github.com/${{github.repository}}
+          cd ${GOPATH}/src/github.com/${{github.repository}}/scripts
           make combineExpCR
-        shell: bash
 
       # Commit and push the changes from the chart directory 
       - name: Commit and Push the changes
         run: |
           cd ${GOPATH}/src/github.com/${{github.repository}}
           make push
-        shell: bash
 
