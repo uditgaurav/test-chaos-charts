@@ -15,6 +15,7 @@ godeps:
 	@cd scripts
 	@go get -u -v golang.org/x/lint/golint
 	@go get -u -v golang.org/x/tools/cmd/goimports
+	@cd ..
 
 .PHONY: versionmaker
 versionmaker:
