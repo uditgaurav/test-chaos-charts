@@ -26,7 +26,7 @@ jobs:
         run: |
           export PATH=$PATH:$(go env GOPATH)/bin
           cd ${GOPATH}/src/github.com/${{github.repository}}
-          CGO_ENABLED=0 go build -o /combine-experiment-cr -v ./scripts
+          make combineExpCR
         shell: bash
 
       # Commit and push the changes from the chart directory 
