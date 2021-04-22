@@ -8,8 +8,6 @@ on: [ push ]
 
 jobs:
   push:
-    container:
-      image: golang:1.14 
     runs-on: ubuntu-latest
     if: github.repository == 'uditgaurav/test-chaos-charts'
     steps:
