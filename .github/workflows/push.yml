@@ -12,6 +12,15 @@ jobs:
     if: github.repository == 'uditgaurav/test-chaos-charts'
     steps:
 
+      # Install golang
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '^1.13.1'
+
+      # Setup gopath
+      - name: Setting up GOPATH 
+        run: |
+          echo "GOPATH=${GITHUB_WORKSPACE}/go" >> $GITHUB_ENV
       # Checkout to the latest commit
       # On specific directory/path
       - uses: actions/checkout@v2
